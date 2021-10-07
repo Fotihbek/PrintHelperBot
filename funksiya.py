@@ -71,4 +71,3 @@ def yakun(n):
     #print(int(b/4), 'ta list soling!')
     #print('Birinchi tomon -', list1)
     #print('Ikkinchi tomon -', list2)
-print(yakun(8))
