@@ -1,9 +1,9 @@
 import logging
-from funksiya import yakun
+from kitobcha_v2 import yakun
 
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '2030202366:AAFxP3UqAuDdY9r3zfGXXcbMi_SjKzHX4tI'
+API_TOKEN = '2068238787:AAHv0yfEVcDcNJ4Rd4K3_tS2-YuJQRGx0p0'
 
 
 # Configure logging
@@ -33,19 +33,30 @@ async def send_help(message: types.Message):
 
 @dp.message_handler()
 async def sendnum(message: types.Message):
-    if message.text.isdigit() and int(message.text) < 1501:
+    
 
-        try:
-            result = yakun(message.text)
+    num = message.text.split()
+    
+    if len(num)==2 and num[0].isdigit() and num[1].isdigit() and int(num[1])>int(num[0]):
+        if int(num[1])-int(num[0]) < 1501:
+
+            result = yakun(int(num[1]), int(num[0]))
             await message.answer(f"Printerga {result['listlar']} ta list joylang! ")
             await message.answer(result['qator1'][1:])
             await message.answer(result['qator2'][1:])
 
-        except:
-            await message.answer('Iltimos, son kiriting!')
+        
+        else:
+            await message.answer('Betlar soni 1500 dan oshmasligi lozim!')
+
+    elif len(num)==1 and num[0].isdigit():
+        result = yakun(int(num[0]))
+        await message.answer(f"Printerga {result['listlar']} ta list joylang! ")
+        await message.answer(result['qator1'][1:])
+        await message.answer(result['qator2'][1:])
 
     else:
-        await message.answer('Iltimos, 1500 dan kichik son kiriting!')
+        await message.answer("Namunadagidek kiriting!")     
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)

@@ -1,19 +1,27 @@
+def ibtido(maks, min=1):
 
-def ibtido(n):
-    
+    n = maks+1-min
     if n % 4 > 0:
-        n = n + (4-n%4)
-    
-    global a, b, son, list1, list2
+        maks = maks + (4-n%4)
+    n = maks+1-min
+
+      
+    global a, b, son, list1, list2, list0
     a = int(n/2)
     son = int(a/2+1)
     b = n*1
+    list0 = []
     list1 = []
     list2 = []
+    for i in range(min,maks+1):
+        list0.append(i)
+
+ 
+
 
 def one(son):
     son -= 2
-    betlar1 = [a+2]
+    betlar1 = [list0[a-1]+2]
     for n in range(son):
         bet = betlar1[n] + 2
         betlar1.append(bet)
@@ -22,7 +30,7 @@ def one(son):
 
 def two(son):
     son -= 2
-    betlar2 = [1]
+    betlar2 = [list0[0]]
     for n in range(son):
         bet = betlar2[n] + 2 
         betlar2.append(bet)
@@ -30,7 +38,7 @@ def two(son):
 
 def three(son):
     son -= 2
-    betlar1 = [2]
+    betlar1 = [list0[1]]
     for n in range(son):
         bet = betlar1[n] + 2 
         betlar1.append(bet)
@@ -39,15 +47,15 @@ def three(son):
 
 def four(son):
     son -= 2
-    betlar2 = [a+1]
+    betlar2 = [list0[a]]
     for n in range(son):
         bet = betlar2[n] + 2 
         betlar2.append(bet)
     return betlar2
 
-def yakun(n):
-    n = int(n)
-    ibtido(n)
+def yakun(maks, min=1):
+    
+    ibtido(maks, min)
     bir = one(son)
     ikki = two(son)
     tort = four(son)
