@@ -6,8 +6,6 @@ from loader import dp
 
 @dp.message_handler(CommandHelp())
 async def bot_help(message: types.Message):
-    text = ("Buyruqlar: ",
-            "/start - Botni ishga tushirish",
-            "/help - Yordam")
+    text = ("Hujjatni, birinchi sahifasidan boshlab chop etmoqchi bo'lsangiz, shunchaki, necha bet ekanini yoki nechinchi betgacha chiqarmoqchi ekaningizni kiriting. ", "Agar, hujjatning birinchi betidan emas, orasidan boshlashni ixtiyor qilsangiz, <b>55 100</b> shaklida yuboring! Bunda, ``55-betdan, 100-betgacha chop etish buyrug'i berilgan`` deb qaraladi.)
     
     await message.answer("\n".join(text))
