@@ -3,7 +3,7 @@ from kitobcha_v2 import yakun
 
 from aiogram import Bot, Dispatcher, executor, types
 
-API_TOKEN = '2068238787:AAHv0yfEVcDcNJ4Rd4K3_tS2-YuJQRGx0p0'
+API_TOKEN = ''
 
 
 # Configure logging
