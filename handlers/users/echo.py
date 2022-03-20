@@ -16,8 +16,8 @@ async def sendnum(message: types.Message):
 
             result = yakun(int(num[1]), int(num[0]))
             await message.answer(f"Printerga {result['listlar']} ta list joylang! ")
-            await message.answer(result['qator1'][1:])
-            await message.answer(result['qator2'][1:])
+            await message.answer(f"<code>{result['qator1'][1:]}</code>")
+            await message.answer(f"<code>{result['qator2'][1:]}</code>")
 
         
         else:
@@ -26,8 +26,8 @@ async def sendnum(message: types.Message):
     elif len(num)==1 and num[0].isdigit():
         result = yakun(int(num[0]))
         await message.answer(f"Printerga {result['listlar']} ta list joylang! ")
-        await message.answer(result['qator1'][1:])
-        await message.answer(result['qator2'][1:])
+        await message.answer(f"<code>{result['qator1'][1:]}</code>")
+        await message.answer(f"<code>{result['qator2'][1:]}</code>")
 
     else:
         await message.answer("Namunadagidek kiriting!")     
