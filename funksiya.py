@@ -1,4 +1,4 @@
-
+"""
 def ibtido(n):
     
     if n % 4 > 0:
@@ -71,3 +71,4 @@ def yakun(n):
     #print(int(b/4), 'ta list soling!')
     #print('Birinchi tomon -', list1)
     #print('Ikkinchi tomon -', list2)
+"""
