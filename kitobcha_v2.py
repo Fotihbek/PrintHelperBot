@@ -16,9 +16,6 @@ def ibtido(maks, min=1):
     for i in range(min,maks+1):
         list0.append(i)
 
- 
-
-
 def one(son):
     son -= 2
     betlar1 = [list0[a-1]+2]
@@ -71,7 +68,7 @@ def yakun(maks, min=1):
     
     for a in list1:
         lugat['qator1'] += f", {a}"
-        
+
     lugat['listlar'] = int(b/4)
     #lugat['list1'] = list1
     #lugat['list2'] = list2
@@ -79,3 +76,18 @@ def yakun(maks, min=1):
     #print(int(b/4), 'ta list soling!')
     #print('Birinchi tomon -', list1)
     #print('Ikkinchi tomon -', list2)
+
+#py
+def get_send(pages, min=1):
+
+    if (pages-min+1) % 2 != 0:
+        pages+=1
+
+    try1 = list(range(min, pages + 1, 2))
+    try2 = list(range(min + 1, pages + 1, 2))
+    try2.reverse()
+    lugat={}
+    lugat['qator1'] = try1
+    lugat['qator2'] = try2
+    lugat['listlar'] = int(pages / 2)
+    return lugat
